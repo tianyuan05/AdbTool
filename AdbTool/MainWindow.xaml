@@ -20,14 +20,19 @@
                      Text="{Binding Command,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                      VerticalContentAlignment="Center" 
                      VerticalAlignment="Top" />
-            <Button Content="执行"
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="执行" IsDefault="True"
                     Command="{Binding ExcuteCommand}"
                     Width="60" Height="27" 
                     VerticalContentAlignment="Center"/>
+                <Button Content="清空" Command="{Binding ClearCommand}"
+                        Width="60" Height="27" Margin="10 0"
+                        VerticalContentAlignment="Center"/>
+            </StackPanel>
         </StackPanel>
         <Grid Grid.Column="2">
             <GroupBox Header="ADB输出">
-                <TextBox VerticalContentAlignment="Top" Background="Black" Foreground="Green"
+                <TextBox VerticalContentAlignment="Top"
                          Text="{Binding Result,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                          TextWrapping="WrapWithOverflow"
                          IsReadOnly="True"
